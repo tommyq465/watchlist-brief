@@ -118,6 +118,7 @@ footer p { margin: .2rem 0; }
   .banner { border-left-color: #000; background: #fff; color: #000; }
   .wrap { max-width: none; padding: 0; }
   a { color: #000; text-decoration: none; }
+  .tape .sym a, .items .h a, .items a.src, .cal .src a, #repo a { display: inline; min-height: 0; }
   .items .h a::after { content: " (" attr(href) ")"; font-size: 8.5pt; color: #444; }
   .co { break-inside: avoid; }
   #changelog, .no-print { display: none; }
@@ -181,94 +182,112 @@ const WATCHLIST = {
 };
 
 const BRIEF = {
-  mode: "sample",
-  asOf: "2026-10-16",
-  retrievedAt: "2026-10-16T16:30:00-04:00",
-  priceType: "close",
+  mode: "live",
+  asOf: "2026-10-28",
+  retrievedAt: "2026-10-28T11:34:00-04:00",
+  priceType: "intraday",
   companies: {
     NVDA: {
       closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 101.40 },
-        { date: "2026-10-14", close: 99.80 },
-        { date: "2026-10-15", close: 103.10 },
-        { date: "2026-10-16", close: 104.20 }
+        { date: "2026-10-21", close: 221.97 },
+        { date: "2026-10-22", close: 212.21 },
+        { date: "2026-10-23", close: 210.96 },
+        { date: "2026-10-26", close: 216.00 },
+        { date: "2026-10-27", close: 217.94 }
       ],
-      latest: null,
-      priceSource: "https://example.com/sample",
+      latest: { date: "2026-10-28", time: "11:33 AM", price: 217.50 },
+      priceSource: "https://stockanalysis.com/stocks/nvda/history/",
       news: [
-        { date: "2026-10-15", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample. The agent writes one plain sentence here on why the item matters to the stock." }
+        { date: "2026-10-27", headline: "Nvidia to invest $3B in Meta's planned equity offering", source: "Stock Analysis", url: "https://stockanalysis.com/news/nvidia-3-billion-meta-offering/", why: "It ties Nvidia more tightly to Meta as a customer for its Vera Rubin and Vera CPU chips, while showing how AI spending is being financed." }
       ],
-      upcoming: [
-        { date: "2026-10-28", event: "Sample event (replace by refreshing)", source: "Sample", url: "https://example.com/sample" }
-      ]
+      upcoming: []
     },
     JPM: {
       closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 99.30 },
-        { date: "2026-10-14", close: 98.90 },
-        { date: "2026-10-15", close: 98.20 },
-        { date: "2026-10-16", close: 97.60 }
+        { date: "2026-10-21", close: 335.19 },
+        { date: "2026-10-22", close: 336.54 },
+        { date: "2026-10-23", close: 331.58 },
+        { date: "2026-10-26", close: 334.04 },
+        { date: "2026-10-27", close: 335.79 }
       ],
-      latest: null,
-      priceSource: "https://example.com/sample",
-      news: [
-        { date: "2026-10-14", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample." }
-      ],
-      upcoming: []
+      latest: { date: "2026-10-28", time: "11:34 AM", price: 338.86 },
+      priceSource: "https://stockanalysis.com/stocks/jpm/history/",
+      news: [],
+      upcoming: [
+        { date: "2026-10-28", event: "Fed (FOMC) meeting ends today, October 27-28; rate decision due this afternoon. Rates matter for bank earnings.", source: "Federal Reserve", url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" }
+      ]
     },
     ACN: {
       closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 100.20 },
-        { date: "2026-10-14", close: 99.90 },
-        { date: "2026-10-15", close: 100.10 },
-        { date: "2026-10-16", close: 100.05 }
+        { date: "2026-10-21", close: 240.26 },
+        { date: "2026-10-22", close: 258.74 },
+        { date: "2026-10-23", close: 249.37 },
+        { date: "2026-10-26", close: 247.23 },
+        { date: "2026-10-27", close: 235.16 }
       ],
-      latest: null,
-      priceSource: "https://example.com/sample",
-      news: [],
-      upcoming: [
-        { date: "2026-10-22", event: "Sample event (replace by refreshing)", source: "Sample", url: "https://example.com/sample" }
-      ]
-    },
-    DE: {
-      closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 102.50 },
-        { date: "2026-10-14", close: 101.80 },
-        { date: "2026-10-15", close: 103.90 },
-        { date: "2026-10-16", close: 102.70 }
-      ],
-      latest: null,
-      priceSource: "https://example.com/sample",
+      latest: { date: "2026-10-28", time: "11:31 AM", price: 245.16 },
+      priceSource: "https://stockanalysis.com/stocks/acn/history/",
       news: [
-        { date: "2026-10-13", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample." }
+        { date: "2026-10-27", headline: "Accenture awarded $151.46M Air Force task order", source: "TheFly via TipRanks", url: "https://www.tipranks.com/news/the-fly/accenture-awarded-151-46m-air-force-task-order-thefly-news", why: "A sole-source federal award with a $228M ceiling adds to Accenture's government work through 2030." },
+        { date: "2026-10-21", headline: "Accenture downgraded to Neutral from Outperform at Baird", source: "TheFly via TipRanks", url: "https://www.tipranks.com/news/the-fly/accenture-downgraded-to-neutral-from-outperform-at-baird-thefly-news", why: "Baird says the shares have more than doubled since June and now look fairly valued, so it sees less room to run." }
       ],
       upcoming: []
     },
-    LLY: {
+    AAPL: {
       closes: [
-        { date: "2026-10-12", close: 100.00 },
-        { date: "2026-10-13", close: 98.70 },
-        { date: "2026-10-14", close: 99.60 },
-        { date: "2026-10-15", close: 101.30 },
-        { date: "2026-10-16", close: 102.90 }
+        { date: "2026-10-21", close: 343.99 },
+        { date: "2026-10-22", close: 348.22 },
+        { date: "2026-10-23", close: 347.73 },
+        { date: "2026-10-26", close: 343.91 },
+        { date: "2026-10-27", close: 347.10 }
       ],
-      latest: null,
-      priceSource: "https://example.com/sample",
+      latest: { date: "2026-10-28", time: "11:33 AM", price: 345.40 },
+      priceSource: "https://stockanalysis.com/stocks/aapl/history/",
       news: [
-        { date: "2026-10-16", headline: "Sample headline. Run the refresh-brief agent to replace this.", source: "Sample", url: "https://example.com/sample", why: "Sample." }
+        { date: "2026-10-27", headline: "Apple unveils new 14-inch MacBook Pro with M6 chip", source: "TechCrunch", url: "https://techcrunch.com/2026/10/27/apple-unveils-new-14-inch-macbook-pro-with-m6-chip/", why: "New M6 Macs, with a claimed 25% faster AI workloads than M5, are Apple's push to drive upgrades; preorders open October 28." }
       ],
       upcoming: [
-        { date: "2026-10-30", event: "Sample event (replace by refreshing)", source: "Sample", url: "https://example.com/sample" }
+        { date: "2026-11-02", event: "Fiscal Q4 2026 earnings, call at 5:00 p.m. ET", source: "Mactrast", url: "https://www.mactrast.com/2026/10/apple-to-announce-fiscal-q4-2026-earnings-on-november-2/" }
+      ]
+    },
+    LLY: {
+      closes: [
+        { date: "2026-10-21", close: 1270.75 },
+        { date: "2026-10-22", close: 1306.69 },
+        { date: "2026-10-23", close: 1273.46 },
+        { date: "2026-10-26", close: 1279.14 },
+        { date: "2026-10-27", close: 1281.91 }
+      ],
+      latest: { date: "2026-10-28", time: "11:31 AM", price: 1298.40 },
+      priceSource: "https://stockanalysis.com/stocks/lly/history/",
+      news: [
+        { date: "2026-10-28", headline: "Retatrutide Edges Out Ozempic 2 mg on Glucose Control and Weight Loss in Lilly Phase 3 Study", source: "PR Newswire (Lilly)", url: "https://www.prnewswire.com/news-releases/lillys-retatrutide-delivered-greater-a1c-reduction-and-more-than-double-the-weight-loss-of-ozempics-highest-approved-dose-in-head-to-head-trial-302921328.html", why: "Head-to-head data against Ozempic strengthens the case for Lilly's next obesity and diabetes drug, though it showed more side-effect discontinuations." },
+        { date: "2026-10-27", headline: "Patrik Jonsson to Retire After 36 Years; Ilya Yuffa Named President of Lilly Global Markets", source: "PR Newswire (Lilly)", url: "https://www.prnewswire.com/news-releases/patrik-jonsson-to-retire-after-36-years-ilya-yuffa-named-president-lilly-global-markets-302921191.html", why: "Lilly is merging its U.S. and international businesses into one unit from January 1, 2027, a leadership and structure change." }
+      ],
+      upcoming: [
+        { date: "2026-10-29", event: "Q3 2026 earnings, call at 10:00 a.m. ET", source: "PR Newswire via Finviz", url: "https://finviz.com/news/403165/lilly-confirms-date-and-conference-call-for-third-quarter-2026-financial-results-announcement" }
       ]
     }
   }
 };
 
 const CHANGELOG = [
+  {
+    date: "2026-10-28",
+    summary: [
+      "NVDA 221.97 to 217.50 (-2.0%) on Nvidia's planned $3B investment in Meta's equity offering",
+      "JPM 335.19 to 338.86 (+1.1%), no major news",
+      "ACN 240.26 to 245.16 (+2.0%) on a $151.46M Air Force task order and a Baird downgrade to Neutral",
+      "AAPL 343.99 to 345.40 (+0.4%) on the new M6 MacBook Pro",
+      "LLY 1270.75 to 1298.40 (+2.2%) on Phase 3 retatrutide results versus Ozempic",
+      "Ticker change: DE (Deere) removed from BRIEF; AAPL (Apple) added, following the WATCHLIST edit.",
+      "Calendar added: FOMC decision Oct 28 (under JPM), LLY Q3 earnings Oct 29, AAPL fiscal Q4 earnings Nov 2.",
+      "Prices: first value is the Oct 21 close, last value is the intraday price at about 11:31-11:34 AM ET on Oct 28 (market open). Closes cover Oct 21-27, all five days for every ticker.",
+      "Missing: no calendar items found in the window for NVDA (earnings Nov 17 is outside it), JPM or ACN (next earnings Dec 17 is outside it).",
+      "Missing: JPM has no news item; the only one I could open (Fox Business, $5B national security investments) is dated Oct 20, outside the seven-day window. News is thin for NVDA, AAPL (one item each) and ACN, LLY (two). Several Reuters, Barron's, CNBC, Business Wire and GlobeNewswire pages could not be opened, so they were left out."
+    ],
+    note: "All prices come from stockanalysis.com history pages, a secondary source. Oct 28 prices are intraday and will differ from today's close. The FOMC decision had not been published when this ran. AAPL earnings date is from Mactrast (Oct 6), not the Apple IR page; the LLY date is from a Finviz copy of Lilly's Oct 15 release. JPM news is empty; check JPM's Oct 27 Business Wire release on 2027 earnings dates, which I could not open."
+  },
   {
     date: "2026-10-16",
     summary: [
