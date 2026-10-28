@@ -85,6 +85,7 @@ section { margin-bottom: 2rem; }
 .items .src { color: var(--muted); font-size: .85rem; }
 .items .w { margin: .15rem 0 0; font-size: .92rem; }
 .empty { color: var(--muted); font-size: .92rem; margin: 0; }
+.tape .sym a, .items .h a, .items a.src, .cal .src a, #repo a { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* Calendar */
 .cal { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
@@ -167,14 +168,14 @@ footer p { margin: .2rem 0; }
 /* ===== DATA. The refresh-brief agent edits BRIEF and CHANGELOG only. ===== */
 
 const WATCHLIST = {
-  owner: "Your Name",
-  club: "SIBC",
+  owner: "Tommy Quinn",
+  club: "Applied AI",
   repo: "",
   tickers: [
     { symbol: "NVDA", name: "NVIDIA", exchange: "NASDAQ", why: "The AI capex cycle in one ticker. If this moves, the whole list moves." },
     { symbol: "JPM",  name: "JPMorgan Chase", exchange: "NYSE", why: "The bank every banking recruit should be able to talk about for five minutes." },
     { symbol: "ACN",  name: "Accenture", exchange: "NYSE", why: "The consulting bellwether. Its bookings tell you how clients feel about spending." },
-    { symbol: "DE",   name: "Deere", exchange: "NYSE", why: "Midwest industrial. Farm income, tariffs, and rates all show up here." },
+    { symbol: "AAPL", name: "Apple", exchange: "NASDAQ", why: "The consumer hardware and services giant. iPhone demand and on-device AI plans drive the story." },
     { symbol: "LLY",  name: "Eli Lilly", exchange: "NYSE", why: "Indiana's largest company and the GLP-1 story." }
   ]
 };
